@@ -8,7 +8,6 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-/* loaded from: classes.dex */
 public class CFileInfo implements CustomSerializable {
     private String mFileName;
     public CPileInfo mPileInfo;
