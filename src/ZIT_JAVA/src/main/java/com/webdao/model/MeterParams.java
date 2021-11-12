@@ -1,7 +1,8 @@
 package com.webdao.model;
 
 /* loaded from: classes.dex */
-public class MeterParams {
+public class MeterParams
+{
     public static final int HIGH_TRIGGER_LEVEL = 10485;
     public static final int LOW_TRIGGER_LEVEL = 1000;
     public static final int MIDDLE_TRIGGER_LEVEL = 3000;
@@ -13,69 +14,86 @@ public class MeterParams {
     private int mGain = 2;
     private int mTriggerLevel = 1000;
 
-    public int getIntervalIndex() {
+    public int getIntervalIndex()
+    {
         float[] vArr = {0.0f, 6.4f, 12.8f, 25.6f, 51.2f, 102.4f, 204.8f, 409.6f, 819.2f, 1638.4f};
-        for (int i = 0; i < vArr.length; i++) {
-            if (vArr[i] == this.mInterval) {
+        for (int i = 0; i < vArr.length; i++)
+        {
+            if (vArr[i] == this.mInterval)
+            {
                 return i;
             }
         }
         return 2;
     }
 
-    public float getInterval() {
+    public float getInterval()
+    {
         return this.mInterval;
     }
 
-    public void setInterval(float interval) {
+    public void setInterval(float interval)
+    {
         this.mInterval = interval;
     }
 
-    public float getFrequence() {
+    public float getFrequence()
+    {
         return this.mFrequence;
     }
 
-    public void setFrequence(float frequence) {
+    public void setFrequence(float frequence)
+    {
         this.mFrequence = frequence;
     }
 
-    public int getGain() {
+    public int getGain()
+    {
         return this.mGain;
     }
 
-    public void setGain(int gain) {
+    public void setGain(int gain)
+    {
         this.mGain = gain;
     }
 
-    public String getSensorName() {
+    public String getSensorName()
+    {
         return this.mSensorName;
     }
 
-    public void setSensorName(String sensorName) {
+    public void setSensorName(String sensorName)
+    {
         this.mSensorName = sensorName;
     }
 
-    public String getSensorCode() {
+    public String getSensorCode()
+    {
         return this.mSensorCode;
     }
 
-    public void setSensorCode(String sensorCode) {
+    public void setSensorCode(String sensorCode)
+    {
         this.mSensorCode = sensorCode;
     }
 
-    public String getSensorVersion() {
+    public String getSensorVersion()
+    {
         return this.mSensorVersion;
     }
 
-    public void setSensorVersion(String sensorVersion) {
+    public void setSensorVersion(String sensorVersion)
+    {
         this.mSensorVersion = sensorVersion;
     }
 
-    public int getTriggerLevel() {
+    public int getTriggerLevel()
+    {
         return this.mTriggerLevel;
     }
 
-    public void setTriggerLevel(int triggerLevel) {
+    public void setTriggerLevel(int triggerLevel)
+    {
         this.mTriggerLevel = triggerLevel;
     }
 }

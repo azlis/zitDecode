@@ -3,7 +3,8 @@ package com.webdao.model;
 import java.util.Date;
 
 /* loaded from: classes.dex */
-public class SensorParams {
+public class SensorParams
+{
     private Date mCalibrationDate;
     private String mCalibrationNo;
     private String mSensorNo;
@@ -13,63 +14,78 @@ public class SensorParams {
     private int mCalCircle = 1;
     private float mSensitivity = 1.0f;
 
-    public String getType() {
+    public String getType()
+    {
         return this.mType;
     }
 
-    public String getCalibrationNo() {
+    public String getCalibrationNo()
+    {
         return this.mCalibrationNo.trim();
     }
 
-    public void setCalibrationNo(String mCalibrationNo) {
+    public void setCalibrationNo(String mCalibrationNo)
+    {
         this.mCalibrationNo = mCalibrationNo;
     }
 
-    public Date getCalibrationDate() {
+    public Date getCalibrationDate()
+    {
         return this.mCalibrationDate;
     }
 
-    public void setCalibrationDate(Date mCalibrationDate) {
+    public void setCalibrationDate(Date mCalibrationDate)
+    {
         this.mCalibrationDate = mCalibrationDate;
     }
 
-    public int getCalCircle() {
+    public int getCalCircle()
+    {
         return this.mCalCircle;
     }
 
-    public void setCalCircle(int mCalCircle) {
+    public void setCalCircle(int mCalCircle)
+    {
         this.mCalCircle = mCalCircle;
     }
 
-    public String getSensorNo() {
+    public String getSensorNo()
+    {
         return this.mSensorNo.trim();
     }
 
-    public void setSensorNo(String mSensorNo) {
+    public void setSensorNo(String mSensorNo)
+    {
         this.mSensorNo = mSensorNo;
     }
 
-    public String getSensorModel() {
+    public String getSensorModel()
+    {
         return this.mSensorModel;
     }
 
-    public void setSensorModel(String mSensorModel) {
+    public void setSensorModel(String mSensorModel)
+    {
         this.mSensorModel = mSensorModel;
     }
 
-    public String getSensorVersion() {
+    public String getSensorVersion()
+    {
         return this.mSensorVersion;
     }
 
-    public void setSensorVersion(String sensorVersion) {
+    public void setSensorVersion(String sensorVersion)
+    {
         this.mSensorVersion = sensorVersion;
     }
 
-    public float getSensitivity() {
+    public float getSensitivity()
+    {
         return this.mSensitivity;
     }
 
-    public void setSensitivity(float sensitivity) {
+    public void setSensitivity(float sensitivity)
+    {
         this.mSensitivity = sensitivity;
     }
 }

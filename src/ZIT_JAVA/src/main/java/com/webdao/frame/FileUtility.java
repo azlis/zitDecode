@@ -2,11 +2,7 @@ package com.webdao.frame;
 
 import com.webdao.model.CFileInfo;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class FileUtility
 {
@@ -27,12 +23,10 @@ public class FileUtility
             fileInfo.initFromStream(inputStream);
             fileInfo.setFileName(file.getName());
             inputStream.close();
-        } catch (FileNotFoundException e)
+        }
+        catch (IOException e)
         {
             e.printStackTrace();
-        } catch (IOException e2)
-        {
-            e2.printStackTrace();
         }
         return fileInfo;
     }
@@ -55,7 +49,8 @@ public class FileUtility
                 outputStream.write(bytes);
                 outputStream.flush();
                 outputStream.close();
-            } catch (IOException e)
+            }
+            catch (IOException e)
             {
                 e.printStackTrace();
             }
@@ -78,11 +73,13 @@ public class FileUtility
             os.flush();
             os.close();
             return true;
-        } catch (FileNotFoundException e)
+        }
+        catch (FileNotFoundException e)
         {
             e.printStackTrace();
             return false;
-        } catch (IOException e2)
+        }
+        catch (IOException e2)
         {
             e2.printStackTrace();
             return false;

@@ -5,7 +5,8 @@ import java.io.InputStream;
 import java.io.Reader;
 
 /* loaded from: classes.dex */
-public interface XmlPullParser {
+public interface XmlPullParser
+{
     public static final int CDSECT = 5;
     public static final int COMMENT = 9;
     public static final int DOCDECL = 10;

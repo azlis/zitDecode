@@ -3,6 +3,7 @@ package com.webdao.model;
 import com.webdao.frame.CommonUtility;
 import com.webdao.frame.CustomSerializable;
 import com.webdao.frame.DataTransfer;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -10,7 +11,8 @@ import java.sql.Date;
 import java.util.Calendar;
 
 /* loaded from: classes.dex */
-public class CPileInfo implements CustomSerializable {
+public class CPileInfo implements CustomSerializable
+{
     private short mAnalogFilter;
     private short mAnalyzeID;
     private short mBlowNumber;
@@ -67,340 +69,429 @@ public class CPileInfo implements CustomSerializable {
     private short mWaveletType;
     private int pileShape;
 
-    public short getWaveSpeed() {
+    public short getWaveSpeed()
+    {
         return this.mWaveSpeed;
     }
 
-    public void setWaveSpeed(int mWaveSpeed) {
+    public void setWaveSpeed(int mWaveSpeed)
+    {
         this.mWaveSpeed = (short) mWaveSpeed;
     }
 
-    public short getSampleLength() {
+    public short getSampleLength()
+    {
         return this.mSampleLength;
     }
 
-    public void setSampleLength(int sampleLength) {
+    public void setSampleLength(int sampleLength)
+    {
         this.mSampleLength = (short) sampleLength;
     }
 
-    public void setPileLength(float mPileLength) {
+    public void setPileLength(float mPileLength)
+    {
         this.mPileLength = mPileLength;
     }
 
-    public float getPileLength() {
+    public float getPileLength()
+    {
         return this.mPileLength;
     }
 
-    public String getPileName() {
+    public String getPileName()
+    {
         return this.mPileName;
     }
 
-    public void setPileName(String pileName) {
+    public void setPileName(String pileName)
+    {
         this.mPileName = pileName;
     }
 
-    public String getProjectName() {
+    public String getProjectName()
+    {
         return this.mProjectName;
     }
 
-    public void setProjectName(String projectName) {
+    public void setProjectName(String projectName)
+    {
         this.mProjectName = projectName;
     }
 
-    public char[] getVersion() {
+    public char[] getVersion()
+    {
         return this.mVersion;
     }
 
-    public char[] getIntegrityEvaluate() {
+    public char[] getIntegrityEvaluate()
+    {
         return this.mIntegrityEvaluate;
     }
 
-    public short getIntegrityDescribe() {
+    public short getIntegrityDescribe()
+    {
         return this.mIntegrityDescribe;
     }
 
-    public String getPileCreateDate() {
+    public String getPileCreateDate()
+    {
         return this.mPileCreateDate;
     }
 
-    public char[] getOtherPileType() {
+    public char[] getOtherPileType()
+    {
         return this.mOtherPileType;
     }
 
-    public String getTestDate() {
+    public String getTestDate()
+    {
         return this.mTestDate;
     }
 
-    public void setTestDate(String testDate) {
+    public void setTestDate(String testDate)
+    {
         this.mTestDate = testDate;
     }
 
-    public short getPileType() {
+    public short getPileType()
+    {
         return this.mPileType;
     }
 
-    public void setPileType(short mPileType) {
+    public void setPileType(short mPileType)
+    {
         this.mPileType = mPileType;
     }
 
-    public short getPileWidth1() {
+    public short getPileWidth1()
+    {
         return this.mPileWidth1;
     }
 
-    public void setPileWidth1(short mPileWidth1) {
+    public void setPileWidth1(short mPileWidth1)
+    {
         this.mPileWidth1 = mPileWidth1;
     }
 
-    public float getSampleInterval() {
+    public float getSampleInterval()
+    {
         return this.mSampleInterval;
     }
 
-    public void setSampleInterval(float mSampleInterval) {
+    public void setSampleInterval(float mSampleInterval)
+    {
         this.mSampleInterval = mSampleInterval;
     }
 
-    public float getSensitivity1() {
+    public float getSensitivity1()
+    {
         return this.mSensitivity1;
     }
 
-    public void setSensitivity1(float mSensitivity1) {
+    public void setSensitivity1(float mSensitivity1)
+    {
         this.mSensitivity1 = mSensitivity1;
     }
 
-    public short getGainTimes() {
+    public short getGainTimes()
+    {
         return this.mGainTimes;
     }
 
-    public void setGainTimes(int gain) {
+    public void setGainTimes(int gain)
+    {
         this.mGainTimes = (short) gain;
     }
 
-    public short getTriggerLevel() {
+    public short getTriggerLevel()
+    {
         return this.mTriggerLevel;
     }
 
-    public void setTriggerLevel(int triggerLevel) {
+    public void setTriggerLevel(int triggerLevel)
+    {
         this.mTriggerLevel = (short) triggerLevel;
     }
 
-    public short getDelayPoint() {
+    public short getDelayPoint()
+    {
         return this.mDelayPoint;
     }
 
-    public void setDelayPoint(int delayPoint) {
+    public void setDelayPoint(int delayPoint)
+    {
         this.mDelayPoint = (short) delayPoint;
     }
 
-    public short getBlowNumber() {
+    public short getBlowNumber()
+    {
         return this.mBlowNumber;
     }
 
-    public void setBlowNumber(int blowNumber) {
+    public void setBlowNumber(int blowNumber)
+    {
         this.mBlowNumber = (short) blowNumber;
     }
 
-    public short getAnalyzeID() {
+    public short getAnalyzeID()
+    {
         return this.mAnalyzeID;
     }
 
-    public void setAnalyzeID(short mAnalyzeID) {
+    public void setAnalyzeID(short mAnalyzeID)
+    {
         this.mAnalyzeID = mAnalyzeID;
     }
 
-    public short getChannelSelected() {
+    public short getChannelSelected()
+    {
         return this.mChannelSelected;
     }
 
-    public float getSensitivity2() {
+    public float getSensitivity2()
+    {
         return this.mSensitivity2;
     }
 
-    public short getPileWidth2() {
+    public short getPileWidth2()
+    {
         return this.mPileWidth2;
     }
 
-    public void setPileWidth2(short mPileWidth2) {
+    public void setPileWidth2(short mPileWidth2)
+    {
         this.mPileWidth2 = mPileWidth2;
     }
 
-    public short getGaintype() {
+    public short getGaintype()
+    {
         return this.mGaintype;
     }
 
-    public char[] getReserveSamplePara() {
+    public char[] getReserveSamplePara()
+    {
         return this.mReserveSamplePara;
     }
 
-    public void setReserveSamplePara(char[] mReserveSamplePara) {
+    public void setReserveSamplePara(char[] mReserveSamplePara)
+    {
         this.mReserveSamplePara = mReserveSamplePara;
     }
 
-    public short getIntegralFlag() {
+    public short getIntegralFlag()
+    {
         return this.mIntegralFlag;
     }
 
-    public void setIntegralFlag(int integralFlag) {
+    public void setIntegralFlag(int integralFlag)
+    {
         this.mIntegralFlag = (short) integralFlag;
     }
 
-    public short getSmoothPoints() {
+    public short getSmoothPoints()
+    {
         return this.mSmoothPoints;
     }
 
-    public void setSmoothPoints(short mSmoothPoints) {
+    public void setSmoothPoints(short mSmoothPoints)
+    {
         this.mSmoothPoints = mSmoothPoints;
     }
 
-    public short getFilterType() {
+    public short getFilterType()
+    {
         return this.mFilterType;
     }
 
-    public void setFilterType(int filterType) {
+    public void setFilterType(int filterType)
+    {
         this.mFilterType = (short) filterType;
     }
 
-    public float getEndFrequencyLow() {
+    public float getEndFrequencyLow()
+    {
         return this.mEndFrequencyLow;
     }
 
-    public void setEndFrequencyLow(float mEndFrequencyLow) {
+    public void setEndFrequencyLow(float mEndFrequencyLow)
+    {
         this.mEndFrequencyLow = mEndFrequencyLow;
     }
 
-    public float getEndFrequencyHigh() {
+    public float getEndFrequencyHigh()
+    {
         return this.mEndFrequencyHigh;
     }
 
-    public void setEndFrequencyHigh(float mEndFrequencyHigh) {
+    public void setEndFrequencyHigh(float mEndFrequencyHigh)
+    {
         this.mEndFrequencyHigh = mEndFrequencyHigh;
     }
 
-    public short getMagnificationType() {
+    public short getMagnificationType()
+    {
         return this.mMagnificationType;
     }
 
-    public void setMagnificationType(short mMagnificationType) {
+    public void setMagnificationType(short mMagnificationType)
+    {
         this.mMagnificationType = mMagnificationType;
     }
 
-    public float getMagnification() {
+    public float getMagnification()
+    {
         return this.mMagnification;
     }
 
-    public void setMagnification(float mMagnification) {
+    public void setMagnification(float mMagnification)
+    {
         this.mMagnification = mMagnification;
     }
 
-    public float getMagnificationStart() {
+    public float getMagnificationStart()
+    {
         return this.mMagnificationStart;
     }
 
-    public void setMagnificationStart(float mMagnificationStart) {
+    public void setMagnificationStart(float mMagnificationStart)
+    {
         this.mMagnificationStart = mMagnificationStart;
     }
 
-    public short getWaveletRotate() {
+    public short getWaveletRotate()
+    {
         return this.mWaveletRotate;
     }
 
-    public void setWaveletRotate(short mWaveletRotate) {
+    public void setWaveletRotate(short mWaveletRotate)
+    {
         this.mWaveletRotate = mWaveletRotate;
     }
 
-    public short getWaveletType() {
+    public short getWaveletType()
+    {
         return this.mWaveletType;
     }
 
-    public float getWaveletFactor() {
+    public float getWaveletFactor()
+    {
         return this.mWaveletFactor;
     }
 
-    public void setWaveletFactor(float waveletFactor) {
+    public void setWaveletFactor(float waveletFactor)
+    {
         this.mWaveletFactor = waveletFactor;
     }
 
-    public short getRemoveDCFlag() {
+    public short getRemoveDCFlag()
+    {
         return this.mRemoveDCFlag;
     }
 
-    public char[] getReserveAnalysePara() {
+    public char[] getReserveAnalysePara()
+    {
         return this.mReserveAnalysePara;
     }
 
-    public void setReserveAnalysePara(char[] mReserveAnalysePara) {
+    public void setReserveAnalysePara(char[] mReserveAnalysePara)
+    {
         this.mReserveAnalysePara = mReserveAnalysePara;
     }
 
-    public float getPileTop() {
+    public float getPileTop()
+    {
         return this.mPileTop;
     }
 
-    public void setPileTop(float mPileTop) {
+    public void setPileTop(float mPileTop)
+    {
         this.mPileTop = mPileTop;
     }
 
-    public float getPileBottom() {
+    public float getPileBottom()
+    {
         return this.mPileBottom;
     }
 
-    public void setPileBottom(float mPileBottom) {
+    public void setPileBottom(float mPileBottom)
+    {
         this.mPileBottom = mPileBottom;
     }
 
-    public short getDisplayNap() {
+    public short getDisplayNap()
+    {
         return this.mDisplayNap;
     }
 
-    public void setDisplayNap(short displayNap) {
+    public void setDisplayNap(short displayNap)
+    {
         this.mDisplayNap = displayNap;
     }
 
-    public short getFlawNum() {
+    public short getFlawNum()
+    {
         return this.mFlawNum;
     }
 
-    public void setFlawNum(short mFlawNum) {
+    public void setFlawNum(short mFlawNum)
+    {
         this.mFlawNum = mFlawNum;
     }
 
-    public short getDisplayAmplify() {
+    public short getDisplayAmplify()
+    {
         return this.mDisplayAmplify;
     }
 
-    public short getCursorX() {
+    public short getCursorX()
+    {
         return this.mCursorX;
     }
 
-    public CFlaw[] getFlaw() {
+    public CFlaw[] getFlaw()
+    {
         return this.mFlaws;
     }
 
-    public void addFlaw(CFlaw flaw) {
+    public void addFlaw(CFlaw flaw)
+    {
         CFlaw[] fArr;
         this.mFlawNum = (short) (this.mFlawNum + 1);
-        if (this.mFlawNum == 1) {
+        if (this.mFlawNum == 1)
+        {
             this.mFlaws = new CFlaw[]{flaw};
             return;
         }
         boolean b = false;
-        for (CFlaw f : this.mFlaws) {
-            if (f.mPosIndex == flaw.mPosIndex) {
+        for (CFlaw f : this.mFlaws)
+        {
+            if (f.mPosIndex == flaw.mPosIndex)
+            {
                 b = true;
             }
         }
-        if (b) {
+        if (b)
+        {
             this.mFlawNum = (short) (this.mFlawNum - 1);
             fArr = new CFlaw[this.mFlawNum];
-            for (int i = 0; i < this.mFlaws.length; i++) {
-                if (this.mFlaws[i].mPosIndex == flaw.mPosIndex) {
+            for (int i = 0; i < this.mFlaws.length; i++)
+            {
+                if (this.mFlaws[i].mPosIndex == flaw.mPosIndex)
+                {
                     fArr[i] = flaw;
-                } else {
+                }
+                else
+                {
                     fArr[i] = this.mFlaws[i];
                 }
             }
-        } else {
+        }
+        else
+        {
             fArr = new CFlaw[this.mFlawNum];
-            for (int i2 = 0; i2 < this.mFlaws.length; i2++) {
+            for (int i2 = 0; i2 < this.mFlaws.length; i2++)
+            {
                 fArr[i2] = this.mFlaws[i2];
             }
             fArr[this.mFlawNum - 1] = flaw;
@@ -408,63 +499,77 @@ public class CPileInfo implements CustomSerializable {
         this.mFlaws = fArr;
     }
 
-    public void clearFlaw() {
+    public void clearFlaw()
+    {
         this.mFlaws = null;
         this.mFlawNum = 0;
     }
 
-    public short getBottomType() {
+    public short getBottomType()
+    {
         return this.mBottomType;
     }
 
-    public void setBottomType(short mBottomType) {
+    public void setBottomType(short mBottomType)
+    {
         this.mBottomType = mBottomType;
     }
 
-    public char[] getReserveAnalyseResult() {
+    public char[] getReserveAnalyseResult()
+    {
         return this.mReserveAnalyseResult;
     }
 
-    public void setReserveAnalyseResult(char[] mReserveAnalyseResult) {
+    public void setReserveAnalyseResult(char[] mReserveAnalyseResult)
+    {
         this.mReserveAnalyseResult = mReserveAnalyseResult;
     }
 
-    public short[] getTestTime() {
+    public short[] getTestTime()
+    {
         return this.mTestTime;
     }
 
-    public void setTestTime(Date date) {
+    public void setTestTime(Date date)
+    {
         this.mTestTime[0] = (short) date.getHours();
         this.mTestTime[1] = (short) date.getMinutes();
         this.mTestTime[2] = (short) date.getSeconds();
     }
 
-    public short getValidGpsFlag() {
+    public short getValidGpsFlag()
+    {
         return this.mValidGpsFlag;
     }
 
-    public void setValidGpsFlag(short mValidGpsFlag) {
+    public void setValidGpsFlag(short mValidGpsFlag)
+    {
         this.mValidGpsFlag = mValidGpsFlag;
     }
 
-    public GPSData getGpsData() {
+    public GPSData getGpsData()
+    {
         return this.mGpsData;
     }
 
-    public void setGpsData(GPSData mGpsData) {
+    public void setGpsData(GPSData mGpsData)
+    {
         this.mGpsData = mGpsData;
     }
 
-    public char[] getReserve3() {
+    public char[] getReserve3()
+    {
         return this.mReserve3;
     }
 
-    public void setReserve3(char[] reserve3) {
+    public void setReserve3(char[] reserve3)
+    {
         this.mReserve3 = reserve3;
     }
 
     @Override // com.webdao.frame.CustomSerializable
-    public int writeToStream(OutputStream os) throws IOException {
+    public int writeToStream(OutputStream os) throws IOException
+    {
         int len;
         byte[] bs = DataTransfer.charToBytes(this.mVersion);
         os.write(bs, 0, bs.length);
@@ -541,11 +646,14 @@ public class CPileInfo implements CustomSerializable {
         byte[] bs25 = DataTransfer.floatToBytes(this.mSensitivity2);
         os.write(bs25, 0, bs25.length);
         int len26 = len25 + bs25.length;
-        if (this.pileShape == 0) {
+        if (this.pileShape == 0)
+        {
             byte[] bs26 = DataTransfer.shortToBytes((short) 0);
             os.write(bs26, 0, bs26.length);
             len = len26 + bs26.length;
-        } else {
+        }
+        else
+        {
             byte[] bs27 = DataTransfer.shortToBytes(this.mPileWidth2);
             os.write(bs27, 0, bs27.length);
             len = len26 + bs27.length;
@@ -613,7 +721,8 @@ public class CPileInfo implements CustomSerializable {
         byte[] bs48 = DataTransfer.shortToBytes(this.mCursorX);
         os.write(bs48, 0, bs48.length);
         int len47 = len46 + bs48.length;
-        for (int i = 0; i < this.mFlawNum; i++) {
+        for (int i = 0; i < this.mFlawNum; i++)
+        {
             len47 += this.mFlaws[i].writeToStream(os);
         }
         byte[] bs49 = DataTransfer.shortToBytes(this.mBottomType);
@@ -636,9 +745,11 @@ public class CPileInfo implements CustomSerializable {
     }
 
     @Override // com.webdao.frame.CustomSerializable
-    public int initFromStream(InputStream is) {
+    public int initFromStream(InputStream is)
+    {
         int readLen = 0;
-        try {
+        try
+        {
             byte[] bs = new byte[10];
             int readLen2 = 0 + is.read(bs, 0, 10);
             this.mVersion = DataTransfer.byteToCharArray(bs);
@@ -717,9 +828,12 @@ public class CPileInfo implements CustomSerializable {
             byte[] bs26 = new byte[2];
             int readLen27 = readLen26 + is.read(bs26, 0, 2);
             this.mPileWidth2 = DataTransfer.byteToShort(bs26);
-            if (this.mPileWidth2 > 0) {
+            if (this.mPileWidth2 > 0)
+            {
                 this.pileShape = 1;
-            } else {
+            }
+            else
+            {
                 this.pileShape = 0;
             }
             byte[] bs27 = new byte[2];
@@ -786,7 +900,8 @@ public class CPileInfo implements CustomSerializable {
             int readLen48 = readLen47 + is.read(bs47, 0, 2);
             this.mCursorX = DataTransfer.byteToShort(bs47);
             this.mFlaws = new CFlaw[this.mFlawNum];
-            for (int i = 0; i < this.mFlawNum; i++) {
+            for (int i = 0; i < this.mFlawNum; i++)
+            {
                 CFlaw flaw = new CFlaw();
                 readLen48 += flaw.initFromStream(is);
                 flaw.mPosIndex = (int) ((flaw.mFlawPosition * 1000.0f) / this.mSampleInterval);
@@ -809,13 +924,16 @@ public class CPileInfo implements CustomSerializable {
             readLen = readLen52 + this.mGpsData.initFromStream(is) + is.read(bs52, 0, 100);
             this.mReserve3 = DataTransfer.byteToCharArray(bs52);
             return readLen;
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             e.printStackTrace();
             return readLen;
         }
     }
 
-    public CPileInfo() {
+    public CPileInfo()
+    {
         this.mVersion = new char[]{'P', '8', 'W', 'V', '3', '.', '0', '0', 0, 0};
         this.mProjectName = "SITE";
         this.mPileName = "1-1";
@@ -850,7 +968,8 @@ public class CPileInfo implements CustomSerializable {
         this.mTestTime[2] = (short) calendar.get(13);
     }
 
-    public void initSystemTime() {
+    public void initSystemTime()
+    {
         Calendar calendar = Calendar.getInstance();
         this.mTestTime[0] = (short) calendar.get(10);
         this.mTestTime[1] = (short) calendar.get(12);
@@ -859,7 +978,8 @@ public class CPileInfo implements CustomSerializable {
         this.mPileCreateDate = CommonUtility.getCurrentDate();
     }
 
-    public CPileInfo(String workName, String pileName, float length, short speed) {
+    public CPileInfo(String workName, String pileName, float length, short speed)
+    {
         this.mVersion = new char[]{'P', '8', 'W', 'V', '3', '.', '0', '0', 0, 0};
         this.mProjectName = "SITE";
         this.mPileName = "1-1";
@@ -894,11 +1014,13 @@ public class CPileInfo implements CustomSerializable {
         setWaveSpeed(speed);
     }
 
-    public int getPileShape() {
+    public int getPileShape()
+    {
         return this.pileShape;
     }
 
-    public void setPileShape(int pileShape) {
+    public void setPileShape(int pileShape)
+    {
         this.pileShape = pileShape;
     }
 }

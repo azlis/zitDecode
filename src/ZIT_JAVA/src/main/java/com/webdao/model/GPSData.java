@@ -2,16 +2,18 @@ package com.webdao.model;
 
 import com.webdao.frame.CustomSerializable;
 import com.webdao.frame.DataTransfer;
+import org.xmlpull.v1.XmlPullParser;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.Locale;
-import org.xmlpull.v1.XmlPullParser;
 
 /* loaded from: classes.dex */
-public class GPSData implements CustomSerializable {
+public class GPSData implements CustomSerializable
+{
     public long longTime;
     public double mCourse;
     public double mLatitude;
@@ -25,17 +27,20 @@ public class GPSData implements CustomSerializable {
     public char[] mReservel = {'1', '2', '3', '4'};
     public char[] mReservel2 = {'1', '2', '3', '4', '5', '6'};
 
-    public String toLatitudeString() {
+    public String toLatitudeString()
+    {
         int[] degs = dec2deg(this.mLatitude);
         return String.format(Locale.getDefault(), "%1$s:%2$d\u00b0%3$d\u2032%4$d\u2033", Character.valueOf(this.mcLatitude), Integer.valueOf(degs[0]), Integer.valueOf(degs[1]), Integer.valueOf(degs[2]));
     }
 
-    public String toLongitudeString() {
+    public String toLongitudeString()
+    {
         int[] degs = dec2deg(this.mLongitude);
         return String.format(Locale.getDefault(), "%1$s:%2$d\u00b0%3$d\u2032%4$d\u2033", Character.valueOf(this.mcLongitude), Integer.valueOf(degs[0]), Integer.valueOf(degs[1]), Integer.valueOf(degs[2]));
     }
 
-    private int[] dec2deg(double deci) {
+    private int[] dec2deg(double deci)
+    {
         String[] decArr = (Math.abs(deci) + XmlPullParser.NO_NAMESPACE).split("\\.");
         int deg = Integer.valueOf(decArr[0]).intValue();
         BigDecimal min_sec = new BigDecimal("0." + decArr[1]).multiply(new BigDecimal(3600));
@@ -44,7 +49,8 @@ public class GPSData implements CustomSerializable {
     }
 
     @Override // com.webdao.frame.CustomSerializable
-    public int writeToStream(OutputStream os) throws IOException {
+    public int writeToStream(OutputStream os) throws IOException
+    {
         this.sysTime = new SystemTimeData();
         int len = 0 + this.sysTime.writeToStream(os);
         byte[] bs = DataTransfer.intToBytes(this.mUseful);
@@ -77,9 +83,11 @@ public class GPSData implements CustomSerializable {
     }
 
     @Override // com.webdao.frame.CustomSerializable
-    public int initFromStream(InputStream is) {
+    public int initFromStream(InputStream is)
+    {
         int readLen = 0;
-        try {
+        try
+        {
             this.sysTime = new SystemTimeData();
             byte[] bs = new byte[4];
             int readLen2 = 0 + this.sysTime.initFromStream(is) + is.read(bs, 0, 4);
@@ -105,7 +113,9 @@ public class GPSData implements CustomSerializable {
             readLen = readLen5 + is.read(bs9, 0, 6);
             this.mReservel2 = DataTransfer.byteToCharArray(bs9);
             return readLen;
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             e.printStackTrace();
             return readLen;
         }

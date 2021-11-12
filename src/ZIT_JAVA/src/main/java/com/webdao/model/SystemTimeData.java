@@ -2,13 +2,15 @@ package com.webdao.model;
 
 import com.webdao.frame.CustomSerializable;
 import com.webdao.frame.DataTransfer;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Calendar;
 
 /* loaded from: classes.dex */
-public class SystemTimeData implements CustomSerializable {
+public class SystemTimeData implements CustomSerializable
+{
     public short mDay;
     public short mDayOfWeek;
     public short mHour;
@@ -18,7 +20,8 @@ public class SystemTimeData implements CustomSerializable {
     public short wMinute;
     public short wSecond;
 
-    public SystemTimeData() {
+    public SystemTimeData()
+    {
         Calendar date = Calendar.getInstance();
         this.mYear = (short) date.get(1);
         this.mMonth = (short) date.get(2);
@@ -30,7 +33,8 @@ public class SystemTimeData implements CustomSerializable {
         this.wMilliseconds = (short) date.get(14);
     }
 
-    public void fromLongTicks(long time) {
+    public void fromLongTicks(long time)
+    {
         Calendar date = Calendar.getInstance();
         date.setTimeInMillis(time);
         this.mYear = (short) date.get(1);
@@ -44,7 +48,8 @@ public class SystemTimeData implements CustomSerializable {
     }
 
     @Override // com.webdao.frame.CustomSerializable
-    public int writeToStream(OutputStream os) throws IOException {
+    public int writeToStream(OutputStream os) throws IOException
+    {
         byte[] bs = DataTransfer.shortToBytes(this.mYear);
         os.write(bs, 0, bs.length);
         int len = 0 + bs.length;
@@ -72,9 +77,11 @@ public class SystemTimeData implements CustomSerializable {
     }
 
     @Override // com.webdao.frame.CustomSerializable
-    public int initFromStream(InputStream is) {
+    public int initFromStream(InputStream is)
+    {
         int readLen = 0;
-        try {
+        try
+        {
             byte[] bs = new byte[2];
             int readLen2 = 0 + is.read(bs, 0, 2);
             this.mYear = DataTransfer.byteToShort(bs);
@@ -100,7 +107,9 @@ public class SystemTimeData implements CustomSerializable {
             readLen = readLen8 + is.read(bs8, 0, 2);
             this.wMilliseconds = DataTransfer.byteToShort(bs8);
             return readLen;
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             e.printStackTrace();
             return readLen;
         }

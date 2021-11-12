@@ -2,6 +2,7 @@ package com.webdao.model;
 
 import com.webdao.frame.CustomSerializable;
 import com.webdao.frame.DataTransfer;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -9,7 +10,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 /* loaded from: classes.dex */
-public class CPileData implements CustomSerializable {
+public class CPileData implements CustomSerializable
+{
     public short mChnGain;
     public short mCurFreq;
     public short mDelFlag;
@@ -38,11 +40,13 @@ public class CPileData implements CustomSerializable {
     public short msDispNap1 = 1;
     public short mFlag = 0;
 
-    public void setOrignalData(boolean b) {
+    public void setOrignalData(boolean b)
+    {
         this.isOrignalData = b;
     }
 
-    public CPileData clone() {
+    public CPileData clone()
+    {
         CPileData d = new CPileData();
         d.mSaveLen = this.mSaveLen;
         d.mPileTop = this.mPileTop;
@@ -63,18 +67,21 @@ public class CPileData implements CustomSerializable {
         d.mMaxAmp = this.mMaxAmp;
         int l = this.mFreqResultData.length;
         d.mFreqResultData = new float[l];
-        for (int i = 0; i < l; i++) {
+        for (int i = 0; i < l; i++)
+        {
             d.mFreqResultData[i] = this.mFreqResultData[i];
         }
         d.msDispNap1 = this.msDispNap1;
         d.mFlag = this.mFlag;
         float[] data = new float[this.mSignalData.length];
-        for (int i2 = 0; i2 < this.mSignalData.length; i2++) {
+        for (int i2 = 0; i2 < this.mSignalData.length; i2++)
+        {
             data[i2] = this.mSignalData[i2];
         }
         d.mSignalData = data;
         float[] d2 = new float[this.mFreqPeak.length];
-        for (int i3 = 0; i3 < this.mFreqPeak.length; i3++) {
+        for (int i3 = 0; i3 < this.mFreqPeak.length; i3++)
+        {
             d2[i3] = this.mFreqPeak[i3];
         }
         d.mFreqPeak = d2;
@@ -82,7 +89,8 @@ public class CPileData implements CustomSerializable {
     }
 
     @Override // com.webdao.frame.CustomSerializable
-    public int writeToStream(OutputStream os) throws IOException {
+    public int writeToStream(OutputStream os) throws IOException
+    {
         byte[] bs = DataTransfer.shortToBytes(this.mSaveLen);
         os.write(bs, 0, bs.length);
         int len = 0 + bs.length;
@@ -128,16 +136,20 @@ public class CPileData implements CustomSerializable {
         byte[] bs15 = DataTransfer.floatToBytes(this.mSignalData);
         os.write(bs15, 0, bs15.length);
         int len15 = len14 + bs15.length;
-        if (this.isOrignalData) {
+        if (this.isOrignalData)
+        {
             return len15;
         }
         byte[] bs16 = DataTransfer.shortToBytes(this.mCurFreq);
         os.write(bs16, 0, bs16.length);
         int len16 = len15 + bs16.length;
-        if (this.mFreqPeak.length < 5) {
+        if (this.mFreqPeak.length < 5)
+        {
             float[] fArr = new float[5];
-            for (int i = 0; i < 5; i++) {
-                if (i < this.mFreqPeak.length) {
+            for (int i = 0; i < 5; i++)
+            {
+                if (i < this.mFreqPeak.length)
+                {
                     fArr[i] = this.mFreqPeak[i];
                 }
             }
@@ -167,10 +179,12 @@ public class CPileData implements CustomSerializable {
     }
 
     @Override // com.webdao.frame.CustomSerializable
-    public int initFromStream(InputStream is) {
+    public int initFromStream(InputStream is)
+    {
         short s = 0;
         int readLen = 0;
-        try {
+        try
+        {
             byte[] bs = new byte[2];
             int readLen2 = 0 + is.read(bs, 0, 2);
             this.mSaveLen = DataTransfer.byteToShort(bs);
@@ -214,14 +228,16 @@ public class CPileData implements CustomSerializable {
             byte[] bs14 = new byte[2];
             int readLen15 = readLen14 + is.read(bs14, 0, 2);
             this.mFreqResultLen = DataTransfer.byteToShort(bs14);
-            if (this.mFreqResultLen >= 0) {
+            if (this.mFreqResultLen >= 0)
+            {
                 s = this.mFreqResultLen;
             }
             this.mFreqResultLen = s;
             byte[] bs15 = new byte[this.mSaveLen * 4];
             readLen = readLen15 + is.read(bs15, 0, this.mSaveLen * 4);
             this.mSignalData = DataTransfer.byteToFloatArray(bs15);
-            if (!this.isOrignalData) {
+            if (!this.isOrignalData)
+            {
                 byte[] bs16 = new byte[2];
                 int readLen16 = readLen + is.read(bs16, 0, 2);
                 this.mCurFreq = DataTransfer.byteToShort(bs16);
@@ -231,8 +247,10 @@ public class CPileData implements CustomSerializable {
                 byte[] bs18 = new byte[4];
                 int readLen18 = readLen17 + is.read(bs18, 0, 4);
                 this.mResolution = DataTransfer.byteToFloat(bs18);
-                if (this.mResolution > 0.0f) {
-                    for (int i = 0; i < 5; i++) {
+                if (this.mResolution > 0.0f)
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
                         this.mFreqPeakPos[i] = (int) (this.mFreqPeak[i] / this.mResolution);
                     }
                 }
@@ -253,26 +271,34 @@ public class CPileData implements CustomSerializable {
                 this.mFlag = DataTransfer.byteToShort(bs23);
             }
             return readLen;
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             e.printStackTrace();
             return readLen;
         }
     }
 
-    public void setFreqNum(int freqNum) {
+    public void setFreqNum(int freqNum)
+    {
         this.mCurFreq = (short) freqNum;
     }
 
-    public int getFreqNum() {
+    public int getFreqNum()
+    {
         return this.mCurFreq;
     }
 
-    public int setFreqPeak(float pos, float peak) {
-        if (this.mCurFreq >= 5) {
+    public int setFreqPeak(float pos, float peak)
+    {
+        if (this.mCurFreq >= 5)
+        {
             return -1;
         }
-        for (int i : this.mFreqPeakPos) {
-            if (((float) i) == ((float) ((int) pos))) {
+        for (int i : this.mFreqPeakPos)
+        {
+            if (((float) i) == ((float) ((int) pos)))
+            {
                 return -2;
             }
         }
@@ -280,18 +306,26 @@ public class CPileData implements CustomSerializable {
         int[] tempPos = new int[count];
         float[] tempFreq = new float[count];
         float maxValue = 0.0f;
-        for (int i2 = 0; i2 < count; i2++) {
-            if (i2 >= this.mCurFreq || i2 >= count) {
+        for (int i2 = 0; i2 < count; i2++)
+        {
+            if (i2 >= this.mCurFreq || i2 >= count)
+            {
                 tempPos[i2] = (int) pos;
-            } else {
+            }
+            else
+            {
                 tempPos[i2] = this.mFreqPeakPos[i2];
             }
-            if (i2 >= this.mCurFreq || i2 >= count) {
+            if (i2 >= this.mCurFreq || i2 >= count)
+            {
                 tempFreq[i2] = peak;
-            } else {
+            }
+            else
+            {
                 tempFreq[i2] = this.mFreqPeak[i2];
             }
-            if (maxValue < tempFreq[i2]) {
+            if (maxValue < tempFreq[i2])
+            {
                 maxValue = tempFreq[i2];
             }
         }
@@ -299,8 +333,10 @@ public class CPileData implements CustomSerializable {
         Arrays.sort(tempPos);
         this.mFreqPeakPos = new int[5];
         this.mFreqPeak = new float[5];
-        for (int i3 = 0; i3 < 5; i3++) {
-            if (i3 < count) {
+        for (int i3 = 0; i3 < 5; i3++)
+        {
+            if (i3 < count)
+            {
                 this.mFreqPeak[i3] = tempFreq[i3];
                 this.mFreqPeakPos[i3] = tempPos[i3];
             }
@@ -310,36 +346,47 @@ public class CPileData implements CustomSerializable {
         return 1;
     }
 
-    public int removePeak(int cursor) {
-        if (cursor <= 0) {
+    public int removePeak(int cursor)
+    {
+        if (cursor <= 0)
+        {
             return 0;
         }
         int[] dis = new int[this.mFreqPeakPos.length];
         int minDis = -1;
-        for (int i = 0; i < this.mFreqPeakPos.length; i++) {
-            if (this.mFreqPeakPos[i] > 0) {
+        for (int i = 0; i < this.mFreqPeakPos.length; i++)
+        {
+            if (this.mFreqPeakPos[i] > 0)
+            {
                 dis[i] = Math.abs(this.mFreqPeakPos[i] - cursor);
-                if (minDis == -1) {
+                if (minDis == -1)
+                {
                     minDis = dis[i];
                 }
-                if (dis[i] < minDis) {
+                if (dis[i] < minDis)
+                {
                     minDis = dis[i];
                 }
             }
         }
-        if (minDis > 4) {
+        if (minDis > 4)
+        {
             return 2;
         }
         int minIndex = 0;
-        for (int i2 = 0; i2 < dis.length; i2++) {
-            if (dis[i2] == minDis) {
+        for (int i2 = 0; i2 < dis.length; i2++)
+        {
+            if (dis[i2] == minDis)
+            {
                 minIndex = i2;
             }
         }
-        if (minIndex < this.mFreqPeakPos.length) {
+        if (minIndex < this.mFreqPeakPos.length)
+        {
             this.mFreqPeakPos[minIndex] = 0;
         }
-        if (minIndex < this.mFreqPeak.length) {
+        if (minIndex < this.mFreqPeak.length)
+        {
             this.mFreqPeak[minIndex] = 0.0f;
         }
         HashMap<Integer, Float> map = new HashMap<>();
@@ -347,10 +394,13 @@ public class CPileData implements CustomSerializable {
         Arrays.sort(this.mFreqPeak);
         Arrays.sort(this.mFreqPeakPos);
         int i3 = 0;
-        while (i3 < this.mFreqPeakPos.length && i3 < this.mFreqPeak.length) {
-            if (this.mFreqPeakPos[i3] > 0) {
+        while (i3 < this.mFreqPeakPos.length && i3 < this.mFreqPeak.length)
+        {
+            if (this.mFreqPeakPos[i3] > 0)
+            {
                 map.put(Integer.valueOf(this.mFreqPeakPos[i3]), Float.valueOf(this.mFreqPeak[i3]));
-                if (maxValue < this.mFreqPeak[i3]) {
+                if (maxValue < this.mFreqPeak[i3])
+                {
                     maxValue = this.mFreqPeak[i3];
                 }
             }
@@ -359,7 +409,8 @@ public class CPileData implements CustomSerializable {
         this.mFreqPeakPos = new int[5];
         this.mFreqPeak = new float[5];
         int i4 = 0;
-        for (Integer pos : map.keySet()) {
+        for (Integer pos : map.keySet())
+        {
             this.mFreqPeakPos[i4] = pos.intValue();
             this.mFreqPeak[i4] = map.get(pos).floatValue();
             i4++;

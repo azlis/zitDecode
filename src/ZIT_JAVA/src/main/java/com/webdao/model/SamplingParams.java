@@ -1,7 +1,8 @@
 package com.webdao.model;
 
 /* loaded from: classes.dex */
-public class SamplingParams {
+public class SamplingParams
+{
     public static final int ALL_ACCEPT = 2;
     public static final int AUTO_ACCEPT = 0;
     public static final int CONTINUITY_STYLE = 1;
@@ -26,67 +27,85 @@ public class SamplingParams {
     private int mTriggerLevel = 3000;
     private int mDelayPoint = -100;
 
-    public int getDelayPoint() {
+    public int getDelayPoint()
+    {
         return this.mDelayPoint;
     }
 
-    public void setDelayPoint(int delayPoint) {
+    public void setDelayPoint(int delayPoint)
+    {
         this.mDelayPoint = delayPoint;
     }
 
-    public int getAcceptModel() {
+    public int getAcceptModel()
+    {
         return this.mAcceptModel;
     }
 
-    public int getHammersPerLine() {
+    public int getHammersPerLine()
+    {
         return this.mHammersPerLine;
     }
 
-    public float getInterval() {
+    public float getInterval()
+    {
         return this.mInterval;
     }
 
-    public int getIntervalIndex() {
+    public int getIntervalIndex()
+    {
         float[] vArr = {0.0f, 6.4f, 12.8f, 25.6f, 51.2f, 102.4f, 204.8f, 409.6f, 819.2f, 1638.4f};
-        for (int i = 0; i < vArr.length; i++) {
-            if (vArr[i] == this.mInterval) {
+        for (int i = 0; i < vArr.length; i++)
+        {
+            if (vArr[i] == this.mInterval)
+            {
                 return i;
             }
         }
         return 2;
     }
 
-    public int getCount() {
+    public int getCount()
+    {
         return this.mCount;
     }
 
-    public int getGain() {
+    public int getGain()
+    {
         return this.mGain;
     }
 
-    public int getGainTimes() {
+    public int getGainTimes()
+    {
         return (int) Math.floor((double) this.gains[this.mGain]);
     }
 
-    public void setGain(int gain) {
+    public void setGain(int gain)
+    {
         this.mGain = gain;
     }
 
-    public void fromGainTimes(int gainTimes) {
-        for (int i = 0; i < this.gains.length; i++) {
-            if (this.gains[i] == ((float) gainTimes)) {
+    public void fromGainTimes(int gainTimes)
+    {
+        for (int i = 0; i < this.gains.length; i++)
+        {
+            if (this.gains[i] == ((float) gainTimes))
+            {
                 this.mGain = i;
                 return;
             }
         }
     }
 
-    public int getTriggerLevel() {
+    public int getTriggerLevel()
+    {
         return this.mTriggerLevel;
     }
 
-    public int getTriggerLevelIndex() {
-        switch (this.mTriggerLevel) {
+    public int getTriggerLevelIndex()
+    {
+        switch (this.mTriggerLevel)
+        {
             case 1000:
             default:
                 return 0;
@@ -97,44 +116,55 @@ public class SamplingParams {
         }
     }
 
-    public int getStyle() {
+    public int getStyle()
+    {
         return this.mStyle;
     }
 
-    public int getLength() {
+    public int getLength()
+    {
         return this.mLength;
     }
 
-    public void setAcceptModel(int acceptModel) {
+    public void setAcceptModel(int acceptModel)
+    {
         this.mAcceptModel = acceptModel;
     }
 
-    public void setCountPerHammer(int countPerHammer) {
+    public void setCountPerHammer(int countPerHammer)
+    {
         this.mHammersPerLine = countPerHammer;
     }
 
-    public void setCount(int count) {
+    public void setCount(int count)
+    {
         this.mCount = count;
     }
 
-    public void setInterval(float interval) {
+    public void setInterval(float interval)
+    {
         this.mInterval = interval;
     }
 
-    public void setLength(int len) {
+    public void setLength(int len)
+    {
         this.mLength = len;
     }
 
-    public void setStyle(int style) {
+    public void setStyle(int style)
+    {
         this.mStyle = style;
     }
 
-    public void setTriggerLevel(int triggerLevel) {
+    public void setTriggerLevel(int triggerLevel)
+    {
         this.mTriggerLevel = triggerLevel;
     }
 
-    public void setTriggerLevelIndex(int triggerLevelIndex) {
-        switch (triggerLevelIndex) {
+    public void setTriggerLevelIndex(int triggerLevelIndex)
+    {
+        switch (triggerLevelIndex)
+        {
             case 0:
                 this.mTriggerLevel = 1000;
                 return;

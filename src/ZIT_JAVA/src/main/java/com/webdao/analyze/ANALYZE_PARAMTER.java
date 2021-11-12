@@ -3,7 +3,8 @@ package com.webdao.analyze;
 import com.webdao.model.SamplingParams;
 
 /* loaded from: classes.dex */
-public class ANALYZE_PARAMTER {
+public class ANALYZE_PARAMTER
+{
     public int nFreqLen;
     public int uMagnificationType = 0;
     public float fMagnification = 1.0f;

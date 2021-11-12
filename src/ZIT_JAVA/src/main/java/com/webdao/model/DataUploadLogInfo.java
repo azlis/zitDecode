@@ -3,7 +3,8 @@ package com.webdao.model;
 import java.util.Date;
 
 /* loaded from: classes.dex */
-public class DataUploadLogInfo {
+public class DataUploadLogInfo
+{
     private String ICP;
     private int mFileCount;
     private String mFileName;
@@ -11,51 +12,63 @@ public class DataUploadLogInfo {
     private String mResult;
     private Date mUploadDateTime;
 
-    public int getFileCount() {
+    public int getFileCount()
+    {
         return this.mFileCount;
     }
 
-    public String getFileName() {
+    public String getFileName()
+    {
         return this.mFileName;
     }
 
-    public String getICP() {
+    public String getICP()
+    {
         return this.ICP;
     }
 
-    public String getOperator() {
+    public String getOperator()
+    {
         return this.mOperator;
     }
 
-    public Date getUploadDateTime() {
+    public Date getUploadDateTime()
+    {
         return this.mUploadDateTime;
     }
 
-    public void setFileCount(int fileCount) {
+    public void setFileCount(int fileCount)
+    {
         this.mFileCount = fileCount;
     }
 
-    public void setUploadResult(String result) {
+    public void setUploadResult(String result)
+    {
         this.mResult = result;
     }
 
-    public String getUploadResult() {
+    public String getUploadResult()
+    {
         return this.mResult;
     }
 
-    public void setFileName(String fileName) {
+    public void setFileName(String fileName)
+    {
         this.mFileName = fileName;
     }
 
-    public void setICP(String ICP) {
+    public void setICP(String ICP)
+    {
         this.ICP = ICP;
     }
 
-    public void setOperator(String operator) {
+    public void setOperator(String operator)
+    {
         this.mOperator = operator;
     }
 
-    public void setUploadDateTime(Date uploadDateTime) {
+    public void setUploadDateTime(Date uploadDateTime)
+    {
         this.mUploadDateTime = uploadDateTime;
     }
 }

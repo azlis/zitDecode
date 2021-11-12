@@ -1,7 +1,8 @@
 package com.webdao.analyze;
 
 /* loaded from: classes.dex */
-public class Analyze {
+public class Analyze
+{
     public native int analyzeOneWave(float[] fArr, ANALYZE_PARAMTER analyze_paramter);
 
     public native float calculateC(int i, int i2, ANALYZE_PARAMTER analyze_paramter);
@@ -26,7 +27,8 @@ public class Analyze {
 
     public native int findFrequencyPeak(float[] fArr, float f, int i, int[] iArr);
 
-    static {
+    static
+    {
         System.loadLibrary("Analyze");
     }
 }

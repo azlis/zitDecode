@@ -6,7 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 
 /* loaded from: classes.dex */
-public class ICPInfo {
+public class ICPInfo
+{
     public static final int LINK_BLUETOOTH = 1;
     public static final int LINK_WIFI = 0;
     private String createTime;
@@ -34,175 +35,218 @@ public class ICPInfo {
     public int wifiIsInBuilt = 1;
     private int mLinkMethod = 0;
 
-    public String getContactTele() {
+    public String getContactTele()
+    {
         return this.mContactTele;
     }
 
-    public void setContactTele(String tele) {
+    public void setContactTele(String tele)
+    {
         this.mContactTele = tele;
     }
 
-    public String getContact() {
+    public String getContact()
+    {
         return this.mContact;
     }
 
-    public void setContact(String contact) {
+    public void setContact(String contact)
+    {
         this.mContact = contact;
     }
 
-    public String getTestType() {
+    public String getTestType()
+    {
         return this.mTestType;
     }
 
-    public void setTestType(String testType) {
+    public void setTestType(String testType)
+    {
         this.mTestType = testType;
     }
 
-    public String getTestMethodJson() {
+    public String getTestMethodJson()
+    {
         return this.mTestMethodJson;
     }
 
-    public String getCustomIcpCode() {
+    public String getCustomIcpCode()
+    {
         return this.mCustomIcpCode;
     }
 
-    public void setCustomIcpCode(String customIcpCode) {
+    public void setCustomIcpCode(String customIcpCode)
+    {
         this.mCustomIcpCode = customIcpCode;
     }
 
-    public void setCreatTime(Date creatTime) {
+    public void setCreatTime(Date creatTime)
+    {
         this.mCreatTime = creatTime;
     }
 
-    public String getCreateTime() {
+    public String getCreateTime()
+    {
         return new SimpleDateFormat("MM-dd hh:mm").format(this.mCreatTime);
     }
 
-    public String getTestBase() {
+    public String getTestBase()
+    {
         return this.mTestBase;
     }
 
-    public void setTestBase(String testBase) {
+    public void setTestBase(String testBase)
+    {
         this.mTestBase = testBase;
     }
 
-    public String getContractCount() {
+    public String getContractCount()
+    {
         return this.mContractCount;
     }
 
-    public void setContractCount(String contractCount) {
+    public void setContractCount(String contractCount)
+    {
         this.mContractCount = contractCount;
     }
 
-    public void setTestMethodJson(String testMethod) {
+    public void setTestMethodJson(String testMethod)
+    {
         this.mTestMethodJson = testMethod;
     }
 
-    public String getInstructorID() {
+    public String getInstructorID()
+    {
         return this.mInstructorID;
     }
 
-    public void setInstructorID(String instructorID) {
+    public void setInstructorID(String instructorID)
+    {
         this.mInstructorID = instructorID;
     }
 
-    public String getICPCode() {
+    public String getICPCode()
+    {
         return this.mICPCode;
     }
 
-    public void setICPCode(String icpCode) {
+    public void setICPCode(String icpCode)
+    {
         this.mICPCode = icpCode;
     }
 
-    public String getWorkName() {
+    public String getWorkName()
+    {
         return this.mWorkName;
     }
 
-    public void setWorkName(String workName) {
+    public void setWorkName(String workName)
+    {
         this.mWorkName = workName;
     }
 
-    public HashMap<String, List<ICPInfo>> getWorkList() {
+    public HashMap<String, List<ICPInfo>> getWorkList()
+    {
         return this.mWorkList;
     }
 
-    public String[] getWorkArray() {
+    public String[] getWorkArray()
+    {
         return (String[]) this.mWorkList.keySet().toArray(new String[this.mWorkList.size()]);
     }
 
-    public void setWorkList(HashMap<String, List<ICPInfo>> workList) {
+    public void setWorkList(HashMap<String, List<ICPInfo>> workList)
+    {
         this.mWorkList = workList;
     }
 
-    public String[] getICPList() {
+    public String[] getICPList()
+    {
         return this.mICPList;
     }
 
-    public void setICPList(String[] ICPList) {
+    public void setICPList(String[] ICPList)
+    {
         this.mICPList = ICPList;
     }
 
-    public int getLinkMethod() {
+    public int getLinkMethod()
+    {
         return this.mLinkMethod;
     }
 
-    public void setLinkMethod(int linkMethod) {
+    public void setLinkMethod(int linkMethod)
+    {
         this.mLinkMethod = linkMethod;
     }
 
-    public String getDataFileName() {
+    public String getDataFileName()
+    {
         return this.mDataFileName;
     }
 
-    public void setDataFileName(String dataFileName) {
+    public void setDataFileName(String dataFileName)
+    {
         this.mDataFileName = dataFileName;
     }
 
-    public String getDataPath() {
+    public String getDataPath()
+    {
         return this.mDataPath;
     }
 
-    public void setDataPath(String dataPath) {
+    public void setDataPath(String dataPath)
+    {
         this.mDataPath = dataPath;
     }
 
-    public String getTestMethod() {
+    public String getTestMethod()
+    {
         return this.mTestMethod;
     }
 
-    public void setTestMethod(String testMethod) {
+    public void setTestMethod(String testMethod)
+    {
         this.mTestMethod = testMethod;
     }
 
-    public String getSensorCode() {
+    public String getSensorCode()
+    {
         return this.mSensorCode;
     }
 
-    public void setSensorCode(String sensorCode) {
+    public void setSensorCode(String sensorCode)
+    {
         this.mSensorCode = sensorCode;
     }
 
-    public String getFinishCount() {
+    public String getFinishCount()
+    {
         return this.mFinishCount;
     }
 
-    public void setFinishCount(String finishCount) {
+    public void setFinishCount(String finishCount)
+    {
         this.mFinishCount = finishCount;
     }
 
-    public String getTestPosition() {
+    public String getTestPosition()
+    {
         return this.mTestPosition;
     }
 
-    public void setTestPosition(String testPosition) {
+    public void setTestPosition(String testPosition)
+    {
         this.mTestPosition = testPosition;
     }
 
-    public String getSuffix() {
+    public String getSuffix()
+    {
         return this.mSuffix;
     }
 
-    public void setSuffix(String mSuffix) {
+    public void setSuffix(String mSuffix)
+    {
         this.mSuffix = mSuffix;
     }
 }

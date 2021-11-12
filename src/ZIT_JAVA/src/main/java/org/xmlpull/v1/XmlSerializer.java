@@ -5,7 +5,8 @@ import java.io.OutputStream;
 import java.io.Writer;
 
 /* loaded from: classes.dex */
-public interface XmlSerializer {
+public interface XmlSerializer
+{
     XmlSerializer attribute(String str, String str2, String str3) throws IOException, IllegalArgumentException, IllegalStateException;
 
     void cdsect(String str) throws IOException, IllegalArgumentException, IllegalStateException;

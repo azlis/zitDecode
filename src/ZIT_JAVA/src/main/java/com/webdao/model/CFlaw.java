@@ -2,12 +2,14 @@ package com.webdao.model;
 
 import com.webdao.frame.CustomSerializable;
 import com.webdao.frame.DataTransfer;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
 /* loaded from: classes.dex */
-public class CFlaw implements CustomSerializable {
+public class CFlaw implements CustomSerializable
+{
     public static final short BREAK = 2;
     public static short COMMON = 0;
     public static final short DEFECT = 6;
@@ -24,17 +26,20 @@ public class CFlaw implements CustomSerializable {
     public short mFlawType;
     public int mPosIndex;
 
-    public CFlaw(int type, int grade, float position) {
+    public CFlaw(int type, int grade, float position)
+    {
         this.mFlawType = (short) type;
         this.mFlawGrade = (short) grade;
         this.mFlawPosition = position;
     }
 
-    public CFlaw() {
+    public CFlaw()
+    {
     }
 
     @Override // com.webdao.frame.CustomSerializable
-    public int writeToStream(OutputStream os) throws IOException {
+    public int writeToStream(OutputStream os) throws IOException
+    {
         byte[] bs = DataTransfer.shortToBytes(this.mFlawType);
         os.write(bs, 0, bs.length);
         int len = 0 + bs.length;
@@ -47,9 +52,11 @@ public class CFlaw implements CustomSerializable {
     }
 
     @Override // com.webdao.frame.CustomSerializable
-    public int initFromStream(InputStream is) {
+    public int initFromStream(InputStream is)
+    {
         int readLen = 0;
-        try {
+        try
+        {
             byte[] bs = new byte[2];
             int readLen2 = 0 + is.read(bs, 0, 2);
             this.mFlawType = DataTransfer.byteToShort(bs);
@@ -60,7 +67,9 @@ public class CFlaw implements CustomSerializable {
             readLen = readLen3 + is.read(bs3, 0, 2);
             this.mFlawGrade = DataTransfer.byteToShort(bs3);
             return readLen;
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             e.printStackTrace();
             return readLen;
         }
