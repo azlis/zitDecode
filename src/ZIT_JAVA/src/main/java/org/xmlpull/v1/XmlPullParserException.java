@@ -1,6 +1,5 @@
 package org.xmlpull.v1;
 
-/* loaded from: classes.dex */
 public class XmlPullParserException extends Exception
 {
     protected int column;

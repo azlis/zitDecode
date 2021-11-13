@@ -19,7 +19,8 @@ public class MainForm
     {
         button_read.addActionListener(e ->
         {
-            cFileInfo = FileUtility.read("test.zit");
+            path = "test.zit";
+            cFileInfo = FileUtility.read(path);
             JOptionPane.showMessageDialog(null, "文件成功读取：" + cFileInfo.mWaveNum);
         });
 

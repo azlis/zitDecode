@@ -4,7 +4,6 @@ import org.xmlpull.v1.XmlPullParser;
 
 import java.io.UnsupportedEncodingException;
 
-/* loaded from: classes.dex */
 public class DataTransfer
 {
     protected static final char[] hexArray = "0123456789ABCDEF".toCharArray();
@@ -39,7 +38,7 @@ public class DataTransfer
         long l = 0;
         for (int i = cArr.length - 1; i >= 0; i--)
         {
-            l |= (long) (cArr[(cArr.length - 1) - i] << (i * 2));
+            l |= cArr[(cArr.length - 1) - i] << (i * 2);
         }
         return l;
     }
