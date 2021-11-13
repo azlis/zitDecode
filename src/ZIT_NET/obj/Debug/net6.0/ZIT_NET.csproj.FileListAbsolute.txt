@@ -13,3 +13,4 @@ D:\文档\GitHub\ZITTOOL\src\ZIT_NET\obj\Debug\net6.0\ZIT_NET.dll
 D:\文档\GitHub\ZITTOOL\src\ZIT_NET\obj\Debug\net6.0\ref\ZIT_NET.dll
 D:\文档\GitHub\ZITTOOL\src\ZIT_NET\obj\Debug\net6.0\ZIT_NET.pdb
 D:\文档\GitHub\ZITTOOL\src\ZIT_NET\obj\Debug\net6.0\ZIT_NET.genruntimeconfig.cache
+D:\文档\GitHub\ZITTOOL\src\ZIT_NET\bin\Debug\net6.0\test.zit

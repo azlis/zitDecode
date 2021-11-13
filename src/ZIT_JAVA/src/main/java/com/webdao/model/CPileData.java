@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 
 import static java.lang.System.*;
 
@@ -401,8 +402,9 @@ public class CPileData implements CustomSerializable
         this.mFreqPeakPos = new int[5];
         this.mFreqPeak = new float[5];
         int i4 = 0;
-        for (Integer pos : map.keySet())
+        for (Iterator<Integer> iterator = map.keySet().iterator(); iterator.hasNext(); )
         {
+            Integer pos = iterator.next();
             this.mFreqPeakPos[i4] = pos;
             this.mFreqPeak[i4] = map.get(pos);
             i4++;
