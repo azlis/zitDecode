@@ -2,7 +2,6 @@ package com.webdao.model;
 
 import com.webdao.frame.CustomSerializable;
 import com.webdao.frame.DataTransfer;
-import org.xmlpull.v1.XmlPullParser;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -41,14 +40,14 @@ public class GPSData implements CustomSerializable
 
     private int[] dec2deg(double deci)
     {
-        String[] decArr = (Math.abs(deci) + XmlPullParser.NO_NAMESPACE).split("\\.");
+        String[] decArr = (Math.abs(deci) + "").split("\\.");
         int deg = Integer.valueOf(decArr[0]).intValue();
         BigDecimal min_sec = new BigDecimal("0." + decArr[1]).multiply(new BigDecimal(3600));
         int min = (int) Math.floor((double) min_sec.divide(new BigDecimal(60)).floatValue());
         return new int[]{deg, min, min_sec.subtract(new BigDecimal(min * 60)).intValue()};
     }
 
-    @Override // com.webdao.frame.CustomSerializable
+    @Override
     public int writeToStream(OutputStream os) throws IOException
     {
         this.sysTime = new SystemTimeData();
@@ -82,7 +81,7 @@ public class GPSData implements CustomSerializable
         return len9 + bs9.length;
     }
 
-    @Override // com.webdao.frame.CustomSerializable
+    @Override
     public int initFromStream(InputStream is)
     {
         int readLen = 0;

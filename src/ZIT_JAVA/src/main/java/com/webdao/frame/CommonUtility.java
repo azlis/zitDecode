@@ -12,9 +12,4 @@ public class CommonUtility
     {
         return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
     }
-
-    public static CharSequence getOtherCurrentDate()
-    {
-        return new SimpleDateFormat("yyyy'-'MM'-'dd").format(new Date());
-    }
 }

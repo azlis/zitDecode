@@ -1,7 +1,5 @@
 package com.webdao.frame;
 
-import org.xmlpull.v1.XmlPullParser;
-
 import java.io.UnsupportedEncodingException;
 
 public class DataTransfer
@@ -68,7 +66,7 @@ public class DataTransfer
         catch (UnsupportedEncodingException e)
         {
             e.printStackTrace();
-            return XmlPullParser.NO_NAMESPACE;
+            return "";
         }
     }
 
