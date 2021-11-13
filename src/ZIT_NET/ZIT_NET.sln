@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZIT_NET", "ZIT_NET.csproj", "{BF37D110-B922-43C7-AF85-EA8290C5F3CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF37D110-B922-43C7-AF85-EA8290C5F3CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF37D110-B922-43C7-AF85-EA8290C5F3CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF37D110-B922-43C7-AF85-EA8290C5F3CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF37D110-B922-43C7-AF85-EA8290C5F3CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F96A8E8F-AA49-4B19-98EA-A5FC3A0C13D0}
+	EndGlobalSection
+EndGlobal

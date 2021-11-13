@@ -7,7 +7,7 @@ import java.io.OutputStream;
 /* loaded from: classes.dex */
 public interface CustomSerializable
 {
-    int initFromStream(InputStream inputStream);
+    int InitFromStream(InputStream inputStream);
 
-    int writeToStream(OutputStream outputStream) throws IOException;
+    int WriteToStream(OutputStream outputStream) throws IOException;
 }

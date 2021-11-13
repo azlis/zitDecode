@@ -7,7 +7,6 @@ import javax.swing.filechooser.FileSystemView;
 
 public class MainForm
 {
-    private static JFrame frame;
     private JButton button_read;
     private JPanel jpanel;
     private JButton button_save;
@@ -20,14 +19,14 @@ public class MainForm
         button_read.addActionListener(e ->
         {
             path = "test.zit";
-            cFileInfo = FileUtility.read(path);
+            cFileInfo = FileUtility.Read(path);
             JOptionPane.showMessageDialog(null, "文件成功读取：" + cFileInfo.mWaveNum);
         });
 
         button_save.addActionListener(e ->
         {
             var filename = path + "_X.zit";
-            FileUtility.saveData(filename, cFileInfo);
+            FileUtility.SaveData(filename, cFileInfo);
             JOptionPane.showMessageDialog(null, "已保存为：" + filename);
         });
         button_select.addActionListener(e ->
@@ -47,7 +46,7 @@ public class MainForm
             {
                 path = fileChooser.getSelectedFile().getPath();
                 System.out.println("文件路径: " + path);
-                cFileInfo = FileUtility.read(path);
+                cFileInfo = FileUtility.Read(path);
                 System.out.println(cFileInfo.mWaveNum);
                 JOptionPane.showMessageDialog(null, "文件成功读取：" + cFileInfo.mWaveNum);
             }
@@ -61,7 +60,7 @@ public class MainForm
      */
     public static void main(String[] args)
     {
-        frame = new JFrame("ZIT");
+        JFrame frame = new JFrame("ZIT");
         frame.setContentPane(new MainForm().jpanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();

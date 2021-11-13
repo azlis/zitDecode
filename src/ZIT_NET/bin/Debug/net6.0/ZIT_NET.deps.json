@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ZIT_NET/1.0.0": {
+        "runtime": {
+          "ZIT_NET.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ZIT_NET/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

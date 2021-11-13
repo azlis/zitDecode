@@ -53,7 +53,7 @@ public class CFileInfo implements CustomSerializable
      *
      * @return 声波数量
      */
-    public short getWaveNum()
+    public short GetWaveNum()
     {
         if (this.mWaveNum == 0)
         {
@@ -65,7 +65,7 @@ public class CFileInfo implements CustomSerializable
     /**
      * 清空桩信息
      */
-    public void clearPileData()
+    public void ClearPileData()
     {
         if (this.mPileOriginalData != null)
         {
@@ -86,10 +86,10 @@ public class CFileInfo implements CustomSerializable
      * @throws IOException
      */
     @Override
-    public int writeToStream(OutputStream os) throws IOException
+    public int WriteToStream(OutputStream os) throws IOException
     {
-        int len = this.mPileInfo.writeToStream(os);
-        byte[] bs = DataTransfer.shortToBytes(getWaveNum());
+        int len = this.mPileInfo.WriteToStream(os);
+        byte[] bs = DataTransfer.ShortToBytes(GetWaveNum());
         os.write(bs, 0, bs.length);
         int len2 = len + 2;
         if (this.mPileOriginalData != null)
@@ -97,8 +97,8 @@ public class CFileInfo implements CustomSerializable
             for (int i = 0; i < this.mPileOriginalData.size(); i++)
             {
                 CPileData pileData = this.mPileOriginalData.get(i);
-                pileData.setOrignalData(true);
-                len2 += pileData.writeToStream(os);
+                pileData.SetOrignalData(true);
+                len2 += pileData.WriteToStream(os);
                 //Log.d("Pile Write mPileOriginalData Length:", String.valueOf(len2));
             }
         }
@@ -107,8 +107,8 @@ public class CFileInfo implements CustomSerializable
             for (int i2 = 0; i2 < this.mPileResultData.size(); i2++)
             {
                 CPileData pileData2 = this.mPileResultData.get(i2);
-                pileData2.setOrignalData(false);
-                len2 += pileData2.writeToStream(os);
+                pileData2.SetOrignalData(false);
+                len2 += pileData2.WriteToStream(os);
                 //Log.d("Pile Write mPileResultData Length*****:", String.valueOf(len2));
             }
         }
@@ -116,10 +116,10 @@ public class CFileInfo implements CustomSerializable
     }
 
     @Override
-    public int initFromStream(InputStream is)
+    public int InitFromStream(InputStream is)
     {
         this.mPileInfo = new CPileInfo();
-        int readLen = this.mPileInfo.initFromStream(is);
+        int readLen = this.mPileInfo.InitFromStream(is);
         byte[] bs = new byte[2];
         try
         {
@@ -129,13 +129,13 @@ public class CFileInfo implements CustomSerializable
         {
             e.printStackTrace();
         }
-        this.mWaveNum = DataTransfer.byteToShort(bs);
+        this.mWaveNum = DataTransfer.ByteToShort(bs);
         this.mPileOriginalData = new ArrayList();
         for (int i = 0; i < this.mWaveNum; i++)
         {
             CPileData pileData = new CPileData();
-            pileData.setOrignalData(true);
-            readLen += pileData.initFromStream(is);
+            pileData.SetOrignalData(true);
+            readLen += pileData.InitFromStream(is);
             this.mPileOriginalData.add(pileData);
             //Log.d("Pile Read mPileOriginalData Length:", String.valueOf(readLen));
         }
@@ -143,22 +143,22 @@ public class CFileInfo implements CustomSerializable
         for (int i2 = 0; i2 < this.mWaveNum; i2++)
         {
             CPileData pileData2 = new CPileData();
-            pileData2.setOrignalData(false);
-            readLen += pileData2.initFromStream(is);
+            pileData2.SetOrignalData(false);
+            readLen += pileData2.InitFromStream(is);
             this.mPileResultData.add(pileData2);
             //Log.d("Pile Read mPileResultData Length:*****", String.valueOf(readLen));
         }
         return readLen;
     }
 
-    public void addFlaw(CFlaw flaw)
+    public void AddFlaw(CFlaw flaw)
     {
-        this.mPileInfo.addFlaw(flaw);
+        this.mPileInfo.AddFlaw(flaw);
     }
 
-    public void clearFlaw()
+    public void ClearFlaw()
     {
-        getPileInfo().clearFlaw();
+        GetPileInfo().ClearFlaw();
     }
 
     /**
@@ -166,7 +166,7 @@ public class CFileInfo implements CustomSerializable
      *
      * @return
      */
-    public CPileInfo getPileInfo()
+    public CPileInfo GetPileInfo()
     {
         return this.mPileInfo;
     }
@@ -176,7 +176,7 @@ public class CFileInfo implements CustomSerializable
      *
      * @param pileInfo
      */
-    public void setPileInfo(CPileInfo pileInfo)
+    public void SetPileInfo(CPileInfo pileInfo)
     {
         if (pileInfo != null)
         {
@@ -189,7 +189,7 @@ public class CFileInfo implements CustomSerializable
      *
      * @return
      */
-    public String getFileName()
+    public String GetFileName()
     {
         return this.mFileName;
     }
@@ -199,7 +199,7 @@ public class CFileInfo implements CustomSerializable
      *
      * @param fileName
      */
-    public void setFileName(String fileName)
+    public void SetFileName(String fileName)
     {
         this.mFileName = fileName;
     }

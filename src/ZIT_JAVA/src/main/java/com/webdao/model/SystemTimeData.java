@@ -8,7 +8,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Calendar;
 
-/* loaded from: classes.dex */
+
 public class SystemTimeData implements CustomSerializable
 {
     public short mDay;
@@ -33,7 +33,7 @@ public class SystemTimeData implements CustomSerializable
         this.wMilliseconds = (short) date.get(14);
     }
 
-    public void fromLongTicks(long time)
+    public void FromLongTicks(long time)
     {
         Calendar date = Calendar.getInstance();
         date.setTimeInMillis(time);
@@ -47,65 +47,65 @@ public class SystemTimeData implements CustomSerializable
         this.wMilliseconds = (short) date.get(14);
     }
 
-    @Override // com.webdao.frame.CustomSerializable
-    public int writeToStream(OutputStream os) throws IOException
+    @Override
+    public int WriteToStream(OutputStream os) throws IOException
     {
-        byte[] bs = DataTransfer.shortToBytes(this.mYear);
+        byte[] bs = DataTransfer.ShortToBytes(this.mYear);
         os.write(bs, 0, bs.length);
-        int len = 0 + bs.length;
-        byte[] bs2 = DataTransfer.shortToBytes(this.mMonth);
+        int len = bs.length;
+        byte[] bs2 = DataTransfer.ShortToBytes(this.mMonth);
         os.write(bs2, 0, bs2.length);
         int len2 = len + bs2.length;
-        byte[] bs3 = DataTransfer.shortToBytes(this.mDayOfWeek);
+        byte[] bs3 = DataTransfer.ShortToBytes(this.mDayOfWeek);
         os.write(bs3, 0, bs3.length);
         int len3 = len2 + bs3.length;
-        byte[] bs4 = DataTransfer.shortToBytes(this.mDay);
+        byte[] bs4 = DataTransfer.ShortToBytes(this.mDay);
         os.write(bs4, 0, bs4.length);
         int len4 = len3 + bs4.length;
-        byte[] bs5 = DataTransfer.shortToBytes(this.mHour);
+        byte[] bs5 = DataTransfer.ShortToBytes(this.mHour);
         os.write(bs5, 0, bs5.length);
         int len5 = len4 + bs5.length;
-        byte[] bs6 = DataTransfer.shortToBytes(this.wMinute);
+        byte[] bs6 = DataTransfer.ShortToBytes(this.wMinute);
         os.write(bs6, 0, bs6.length);
         int len6 = len5 + bs6.length;
-        byte[] bs7 = DataTransfer.shortToBytes(this.wSecond);
+        byte[] bs7 = DataTransfer.ShortToBytes(this.wSecond);
         os.write(bs7, 0, bs7.length);
         int len7 = len6 + bs7.length;
-        byte[] bs8 = DataTransfer.shortToBytes(this.wMilliseconds);
+        byte[] bs8 = DataTransfer.ShortToBytes(this.wMilliseconds);
         os.write(bs8, 0, bs8.length);
         return len7 + bs8.length;
     }
 
-    @Override // com.webdao.frame.CustomSerializable
-    public int initFromStream(InputStream is)
+    @Override
+    public int InitFromStream(InputStream stream)
     {
         int readLen = 0;
         try
         {
             byte[] bs = new byte[2];
-            int readLen2 = 0 + is.read(bs, 0, 2);
-            this.mYear = DataTransfer.byteToShort(bs);
+            int readLen2 = stream.read(bs, 0, 2);
+            this.mYear = DataTransfer.ByteToShort(bs);
             byte[] bs2 = new byte[2];
-            int readLen3 = readLen2 + is.read(bs2, 0, 2);
-            this.mMonth = DataTransfer.byteToShort(bs2);
+            int readLen3 = readLen2 + stream.read(bs2, 0, 2);
+            this.mMonth = DataTransfer.ByteToShort(bs2);
             byte[] bs3 = new byte[2];
-            int readLen4 = readLen3 + is.read(bs3, 0, 2);
-            this.mDayOfWeek = DataTransfer.byteToShort(bs3);
+            int readLen4 = readLen3 + stream.read(bs3, 0, 2);
+            this.mDayOfWeek = DataTransfer.ByteToShort(bs3);
             byte[] bs4 = new byte[2];
-            int readLen5 = readLen4 + is.read(bs4, 0, 2);
-            this.mDay = DataTransfer.byteToShort(bs4);
+            int readLen5 = readLen4 + stream.read(bs4, 0, 2);
+            this.mDay = DataTransfer.ByteToShort(bs4);
             byte[] bs5 = new byte[2];
-            int readLen6 = readLen5 + is.read(bs5, 0, 2);
-            this.mHour = DataTransfer.byteToShort(bs5);
+            int readLen6 = readLen5 + stream.read(bs5, 0, 2);
+            this.mHour = DataTransfer.ByteToShort(bs5);
             byte[] bs6 = new byte[2];
-            int readLen7 = readLen6 + is.read(bs6, 0, 2);
-            this.wMinute = DataTransfer.byteToShort(bs6);
+            int readLen7 = readLen6 + stream.read(bs6, 0, 2);
+            this.wMinute = DataTransfer.ByteToShort(bs6);
             byte[] bs7 = new byte[2];
-            int readLen8 = readLen7 + is.read(bs7, 0, 2);
-            this.wSecond = DataTransfer.byteToShort(bs7);
+            int readLen8 = readLen7 + stream.read(bs7, 0, 2);
+            this.wSecond = DataTransfer.ByteToShort(bs7);
             byte[] bs8 = new byte[2];
-            readLen = readLen8 + is.read(bs8, 0, 2);
-            this.wMilliseconds = DataTransfer.byteToShort(bs8);
+            readLen = readLen8 + stream.read(bs8, 0, 2);
+            this.wMilliseconds = DataTransfer.ByteToShort(bs8);
             return readLen;
         }
         catch (IOException e)

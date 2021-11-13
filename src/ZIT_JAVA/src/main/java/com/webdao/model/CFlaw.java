@@ -36,35 +36,35 @@ public class CFlaw implements CustomSerializable
     {
     }
 
-    @Override // com.webdao.frame.CustomSerializable
-    public int writeToStream(OutputStream os) throws IOException
+    @Override
+    public int WriteToStream(OutputStream os) throws IOException
     {
-        byte[] bs = DataTransfer.shortToBytes(this.mFlawType);
+        byte[] bs = DataTransfer.ShortToBytes(this.mFlawType);
         os.write(bs, 0, bs.length);
-        int len = 0 + bs.length;
-        byte[] bs2 = DataTransfer.floatToBytes(this.mFlawPosition);
+        int len = bs.length;
+        byte[] bs2 = DataTransfer.FloatToBytes(this.mFlawPosition);
         os.write(bs2, 0, bs2.length);
         int len2 = len + bs2.length;
-        byte[] bs3 = DataTransfer.shortToBytes(this.mFlawGrade);
+        byte[] bs3 = DataTransfer.ShortToBytes(this.mFlawGrade);
         os.write(bs3, 0, bs3.length);
         return len2 + bs3.length;
     }
 
-    @Override // com.webdao.frame.CustomSerializable
-    public int initFromStream(InputStream is)
+    @Override
+    public int InitFromStream(InputStream is)
     {
         int readLen = 0;
         try
         {
             byte[] bs = new byte[2];
-            int readLen2 = 0 + is.read(bs, 0, 2);
-            this.mFlawType = DataTransfer.byteToShort(bs);
+            int readLen2 = is.read(bs, 0, 2);
+            this.mFlawType = DataTransfer.ByteToShort(bs);
             byte[] bs2 = new byte[4];
             int readLen3 = readLen2 + is.read(bs2, 0, 4);
-            this.mFlawPosition = DataTransfer.byteToFloat(bs2);
+            this.mFlawPosition = DataTransfer.ByteToFloat(bs2);
             byte[] bs3 = new byte[2];
             readLen = readLen3 + is.read(bs3, 0, 2);
-            this.mFlawGrade = DataTransfer.byteToShort(bs3);
+            this.mFlawGrade = DataTransfer.ByteToShort(bs3);
             return readLen;
         }
         catch (IOException e)
