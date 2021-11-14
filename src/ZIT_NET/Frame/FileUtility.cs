@@ -12,8 +12,6 @@ namespace ZIT_NET.Frame
 {
     public class FileUtility
     {
-
-
         public static CFileInfo Read(string fileName)
         {
             CFileInfo fileInfo = new CFileInfo();

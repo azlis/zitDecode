@@ -507,13 +507,13 @@ namespace ZIT_NET.Model
 
         public void ClearFlaw()
         {
-            this.mFlaws = null;
-            this.mFlawNum = 0;
+            mFlaws = null;
+            mFlawNum = 0;
         }
 
         public short GetBottomType()
         {
-            return this.mBottomType;
+            return mBottomType;
         }
 
         public void SetBottomType(short mBottomType)

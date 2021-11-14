@@ -10,7 +10,6 @@ namespace ZIT_NET.Frame
     public class DataTransfer
     {
         protected static readonly char[] hexArray = "0123456789ABCDEF".ToCharArray();
-
         public static byte[] IntToBytes(int i)
         {
             return new byte[] { (byte)((i >> 24) & 255), (byte)((i >> 16) & 255), (byte)((i >> 8) & 255), (byte)(i & 255) };
@@ -66,12 +65,12 @@ namespace ZIT_NET.Frame
         {
             try
             {
+                Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
                 var v = Encoding.GetEncoding("GB2312").GetString(bArr);
                 return v;
             }
             catch (Exception e)
             {
-                //e.printStackTrace();
                 Console.WriteLine(e.StackTrace);
                 return "";
             }
@@ -227,8 +226,8 @@ namespace ZIT_NET.Frame
                 byte[] bytes = new byte[0];
                 if (str != null)
                 {
+                    Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
                     bytes = Encoding.GetEncoding("GB2312").GetBytes(str);
-                    //bytes = str.getBytes("GB2312");
                 }
                 for (int i = 0; i < len; i++)
                 {
@@ -244,7 +243,6 @@ namespace ZIT_NET.Frame
             }
             catch (Exception e)
             {
-                //e.printStackTrace();
                 Console.WriteLine(e.StackTrace);
             }
             return bArr;
