@@ -4,6 +4,8 @@ import com.webdao.model.CFileInfo;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.filechooser.FileSystemView;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainForm
 {
@@ -11,6 +13,7 @@ public class MainForm
     private JPanel jpanel;
     private JButton button_save;
     private JButton button_select;
+    private JButton ButtonCover;
     private String path = null;//文件路径
     private CFileInfo cFileInfo;
 
@@ -50,6 +53,11 @@ public class MainForm
                 System.out.println(cFileInfo.mWaveNum);
                 JOptionPane.showMessageDialog(null, "文件成功读取：" + cFileInfo.mWaveNum);
             }
+        });
+        ButtonCover.addActionListener(e ->
+        {
+            cFileInfo.mPileOriginalData = cFileInfo.mPileResultData;
+            JOptionPane.showMessageDialog(null, "ok" );
         });
     }
 
