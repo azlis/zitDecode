@@ -14,6 +14,7 @@ public class MainForm
     private JButton button_save;
     private JButton button_select;
     private JButton ButtonCover;
+    private JButton deleteButton;
     private String path = null;//文件路径
     private CFileInfo cFileInfo;
 
@@ -32,6 +33,7 @@ public class MainForm
             FileUtility.SaveData(filename, cFileInfo);
             JOptionPane.showMessageDialog(null, "已保存为：" + filename);
         });
+
         button_select.addActionListener(e ->
         {
             int result = 0;
@@ -54,9 +56,25 @@ public class MainForm
                 JOptionPane.showMessageDialog(null, "文件成功读取：" + cFileInfo.mWaveNum);
             }
         });
+
         ButtonCover.addActionListener(e ->
         {
             cFileInfo.mPileOriginalData = cFileInfo.mPileResultData;
+            JOptionPane.showMessageDialog(null, "ok" );
+        });
+
+        deleteButton.addActionListener(e ->
+        {
+            cFileInfo.mPileInfo.SetBlowNumber(1);
+            cFileInfo.mWaveNum = 1;
+            cFileInfo.mPileOriginalData.remove(3);
+            cFileInfo.mPileOriginalData.remove(2);
+            cFileInfo.mPileOriginalData.remove(1);
+
+            cFileInfo.mPileResultData.remove(3);
+            cFileInfo.mPileResultData.remove(2);
+            cFileInfo.mPileResultData.remove(1);
+
             JOptionPane.showMessageDialog(null, "ok" );
         });
     }
