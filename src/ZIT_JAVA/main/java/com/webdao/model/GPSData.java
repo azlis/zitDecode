@@ -22,30 +22,8 @@ public class GPSData implements CustomSerializable
     public char mcLatitude;
     public char mcLongitude;
     public SystemTimeData sysTime;
-    DecimalFormat df = new DecimalFormat("0.##");
     public char[] mReservel = {'1', '2', '3', '4'};
     public char[] mReservel2 = {'1', '2', '3', '4', '5', '6'};
-
-    public String ToLatitudeString()
-    {
-        int[] degs = Dec2deg(this.mLatitude);
-        return String.format(Locale.getDefault(), "%1$s:%2$d\u00b0%3$d\u2032%4$d\u2033", this.mcLatitude, degs[0], degs[1], degs[2]);
-    }
-
-    public String ToLongitudeString()
-    {
-        int[] degs = Dec2deg(this.mLongitude);
-        return String.format(Locale.getDefault(), "%1$s:%2$d\u00b0%3$d\u2032%4$d\u2033", this.mcLongitude, degs[0], degs[1], degs[2]);
-    }
-
-    private int[] Dec2deg(double deci)
-    {
-        String[] decArr = (Math.abs(deci) + "").split("\\.");
-        int deg = Integer.valueOf(decArr[0]);
-        BigDecimal min_sec = new BigDecimal("0." + decArr[1]).multiply(new BigDecimal(3600));
-        int min = (int) Math.floor(min_sec.divide(new BigDecimal(60)).floatValue());
-        return new int[]{deg, min, min_sec.subtract(new BigDecimal(min * 60)).intValue()};
-    }
 
     @Override
     public int WriteToStream(OutputStream os) throws IOException

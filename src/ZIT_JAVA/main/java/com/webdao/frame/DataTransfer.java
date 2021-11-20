@@ -11,7 +11,6 @@ public class DataTransfer
     public static byte[] ShortToBytes(short s)
     {
         var v = new byte[]{(byte) (s & 255), (byte) ((65280 & s) >> 8)};
-        System.out.println("ShortToBytes："+Arrays.toString(v));
         return v;
     }
 
@@ -84,11 +83,36 @@ public class DataTransfer
         {
             e.printStackTrace();
         }
+        //var a = bytesToHexString(bArr);
+        //var s  = a.length();
         return bArr;
+    }
+
+    public static String bytesToHexString(byte[] src)
+    {
+        StringBuilder stringBuilder = new StringBuilder("");
+        if (src == null || src.length <= 0)
+        {
+            return null;
+        }
+        for (int i = 0; i < src.length; i++)
+        {
+            int v = src[i] & 0xFF;
+            String hv = Integer.toHexString(v);
+            if (hv.length() < 2)
+            {
+                stringBuilder.append(0);
+            }
+            stringBuilder.append(hv);
+        }
+        return stringBuilder.toString();
     }
 
     public static byte[] CharToBytes(char c)
     {
+        var b=new byte[]{(byte) c};
+        var a = bytesToHexString(b);
+        var s  = a.length();
         return new byte[]{(byte) c};
     }
 
