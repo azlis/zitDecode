@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03821dd0-ff1b-4376-b481-e6bb7334baff" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/webdao/frame/DataTransfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/webdao/frame/DataTransfer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/webdao/model/GPSData.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/webdao/model/GPSData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ZIT_JAVA/com/webdao/frame/DataTransfer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ZIT_JAVA/com/webdao/frame/DataTransfer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ZIT_JAVA/com/webdao/model/CFileInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ZIT_JAVA/com/webdao/model/CFileInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ZIT_JAVA/com/webdao/model/CPileInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ZIT_JAVA/com/webdao/model/CPileInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ZIT_JAVA/com/webdao/model/GPSData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ZIT_JAVA/com/webdao/model/GPSData.class" afterDir="false" />
-    </list>
+    <list default="true" id="03821dd0-ff1b-4376-b481-e6bb7334baff" name="变更" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
