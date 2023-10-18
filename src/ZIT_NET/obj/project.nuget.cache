@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "LtMJGwipL79xImVu3u9XgNlKtw7cJGnn1dMap4+TmrIt1RBOX/owZPjYbtqpEcNg5Vi/j7GSSsCvadA64hYaZw==",
+  "dgSpecHash": "PhgONuWL8fB9FqopRYSY8LvkxoYb7WsT3iBUAfPcc0cgRrvYi/hu1fKl+Y4iNPAgoPlBsTlx58PtBrpSLHpicg==",
   "success": true,
-  "projectFilePath": "D:\\文档\\GitHub\\ZITTOOL\\src\\ZIT_NET\\ZIT_NET.csproj",
+  "projectFilePath": "D:\\Documents\\GitHub\\zitDecode\\src\\ZIT_NET\\ZIT_NET.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\lee\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-    "C:\\Users\\lee\\.nuget\\packages\\system.text.encoding.codepages\\6.0.0\\system.text.encoding.codepages.6.0.0.nupkg.sha512"
+    "C:\\Users\\yb15\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\yb15\\.nuget\\packages\\system.text.encoding.codepages\\6.0.0\\system.text.encoding.codepages.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }
